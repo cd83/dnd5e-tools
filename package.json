@@ -18,9 +18,10 @@
   "homepage": "https://github.com/cd83/dnd5e-tools#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "roll": "^1.2.0"
   },
   "engines": {
-    "node": "5.9.1" 
+    "node": "5.9.1"
   }
 }
