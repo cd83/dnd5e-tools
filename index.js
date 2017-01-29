@@ -1,23 +1,16 @@
-var express = require('express');
-var app = express();
-
 var roll = require('roll');
 roll = new roll();
 
-app.set('port', (process.env.PORT || 5000));
+var output = roll.roll('4d6b3');
 
-app.use(express.static(__dirname + '/public'));
+var newCharRolls = [
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+];
 
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-
-
+for(i=0; i<6; i++){
+    var rollNum = i+1
+    var CharRoll = roll.roll('4d6b3')
+    newCharRolls.push("Roll #" + rollNum + ": " + CharRoll.calculations[0] + " (Rolled " + CharRoll.rolled + ").");
+}
+ 
+console.log(newCharRolls)
