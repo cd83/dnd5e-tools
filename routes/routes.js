@@ -1,8 +1,11 @@
+var roll = require('roll');
+roll = new roll();
+
 var appRouter = function(app){
     app.get("/status", function (req, res) {
         console.log("someone hit ye ole status");
         if(req.query.text){
-            roll = new roll();
+            
             var newChar = newCharRoller();
             //console.log(rpsbot);
             //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
@@ -12,12 +15,11 @@ var appRouter = function(app){
     });
     app.get("/", function(req, res){
         //console.log("someone hit ye ole default");
-        roll = new roll();
-            var newChar = newCharRoller();
-            //console.log(rpsbot);
-            //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
-            var sendbacktext = newChar;
-            return res.send({"text": sendbacktext});
+        var newChar = newCharRoller();
+        //console.log(rpsbot);
+        //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
+        var sendbacktext = newChar;
+        return res.send({"text": sendbacktext});
         return res.send("Hello Meow!");
     });
 
