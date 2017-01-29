@@ -7,17 +7,18 @@ var appRouter = function(app){
             //console.log(rpsbot);
             //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
             var sendbacktext = newChar;
-            if (rpsbot == 'rock' && req.query.text == 'scissors') {
-                var sendbacktext = "YOU LOSE! You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
-            } else {
-                var sendbacktext = "You gotta enter '/rps rock', '/rps paper', or '/rps scissors' duhh";
-            }
             return res.send({"text": sendbacktext});
         }
     });
     app.get("/", function(req, res){
         //console.log("someone hit ye ole default");
-        return res.send(newCharRoller);
+        roll = new roll();
+            var newChar = newCharRoller();
+            //console.log(rpsbot);
+            //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
+            var sendbacktext = newChar;
+            return res.send({"text": sendbacktext});
+        return res.send("Hello Meow!");
     });
 
 }
