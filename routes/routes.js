@@ -9,7 +9,12 @@ var appRouter = function(app){
             var newChar = newCharRoller();
             //console.log(rpsbot);
             //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
-            var sendbacktext = newChar;
+            var varsendbacktext = "Rolling 4d6 and throwing out the lowest one 6 times..."
+            if (req.query.text == "rollone") {
+                var sendbacktext = newChar;
+            } else {
+                var sendbacktext = "Enter /newchar rollone"
+            }
             return res.send({"text": sendbacktext});
         }
     });
