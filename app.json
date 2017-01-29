@@ -1,8 +1,8 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
+  "name": "DnD5e Tools",
+  "description": "Tools for Dungeons and Dragons Fifth Ed.",
+  "repository": "https://github.com/cd83/dnd5e-tools",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
+  "keywords": ["DnD"],
   "image": "heroku/nodejs"
 }
