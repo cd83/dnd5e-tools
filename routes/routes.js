@@ -3,11 +3,10 @@ var appRouter = function(app){
         console.log("someone hit ye ole status");
         if(req.query.text){
             roll = new roll();
-
-            //var rpsbot = rps[getrps];
             var newChar = newCharRoller();
-            console.log(rpsbot);
-            var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
+            //console.log(rpsbot);
+            //var sendbacktext = "You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
+            var sendbacktext = newChar;
             if (rpsbot == 'rock' && req.query.text == 'scissors') {
                 var sendbacktext = "YOU LOSE! You chose " + req.query.text + ", RPS Bot chose " + rpsbot;
             } else {
@@ -15,19 +14,10 @@ var appRouter = function(app){
             }
             return res.send({"text": sendbacktext});
         }
-        else {
-            //var rpsbot = rps[getrps];
-            var rpsbot = rockPaperScissorsBot();
-            console.log(rpsbot);
-            var sendbacktext = "You gotta enter '/rps rock', '/rps paper', or '/rps scissors' duhh";
-            return res.send({"text": sendbacktext});
-        }
-        
-        
     });
     app.get("/", function(req, res){
         //console.log("someone hit ye ole default");
-        return res.send("Hello Meow!");
+        return res.send(newCharRoller);
     });
 
 }
